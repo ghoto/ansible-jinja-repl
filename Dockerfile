@@ -14,7 +14,8 @@ WORKDIR /data
 # Install dependencies
 RUN pip install -r requirements.txt
 
-RUN apt-get update && apt-get -y install vim
+# RUN apt-get update && apt-get -y install vim
+# RUN apt-get -y install vim
 
 # Change bind host
 RUN sed -i 's/host=config.HOST/host="0.0.0.0"/g' parser.py
