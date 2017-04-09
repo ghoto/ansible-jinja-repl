@@ -17,11 +17,11 @@ app = Flask(__name__)
 
 
 def get_custom_filters():
-    import filters
+    from ansible.plugins.filter import core as ansible_filters
     custom_filters = {}
-    for m in getmembers(filters):
-        if m[0].startswith('filter_') and isfunction(m[1]):
-            filter_name = m[0][7:]
+    for m in getmembers(ansible_filters):
+        if isfunction(m[1]):
+            filter_name = m[0]
             custom_filters[filter_name] = m[1]
 
     return custom_filters
