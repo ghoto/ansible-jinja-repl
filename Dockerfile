@@ -7,7 +7,7 @@
 # Pull base image.
 FROM python:2.7
 
-RUN git clone https://github.com/howinator/jinja-ansible-repl.git /data
+ADD / data
 
 WORKDIR /data
 
