@@ -8,7 +8,7 @@ All you need is Python and preferably [pip](https://pypi.python.org/pypi/pip). C
 
 ### Clone + pip
 
-    $ git clone git@github.com:howinator/jinja-ansible-repl.git
+    $ git clone git@github.com:ghoto/jinja-ansible-repl.git
     $ pip install -r requirements.txt
     $ python parser.py
 
@@ -20,7 +20,7 @@ Build it:
 
 Or simply pull it from registry (without building):
 
-    docker run -d -p 5005:5000 howinator/ansible-jinja-repl
+    docker run -d -p 5005:5000 elghoto/ansible-jinja-repl
 
 
 ## Usage
