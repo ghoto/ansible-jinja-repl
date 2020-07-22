@@ -4,9 +4,7 @@ from __future__ import absolute_import, print_function
 from flask import Flask, render_template, request
 from jinja2 import Environment, meta, exceptions
 from random import choice
-from inspect import getmembers, isfunction
 from cgi import escape
-import logging
 import logging.handlers
 import json
 import yaml
@@ -18,13 +16,7 @@ app = Flask(__name__)
 
 def get_custom_filters():
     from ansible.plugins.filter import core as ansible_filters
-    custom_filters = {}
-    for m in getmembers(ansible_filters):
-        if isfunction(m[1]):
-            filter_name = m[0]
-            custom_filters[filter_name] = m[1]
-
-    return custom_filters
+    return ansible_filters.FilterModule().filters()
 
 
 @app.route("/")

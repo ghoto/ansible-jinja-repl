@@ -2,7 +2,7 @@
 
 set -ex
 
-DOCKER_IMAGE_NAME="howinator/$(basename "$(pwd)")"
+DOCKER_IMAGE_NAME="elghoto/$(basename "$(pwd)")"
 DOCKER_CONTAINER_NAME='ansible-jinja-parser'
 
 {
